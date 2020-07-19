@@ -8,7 +8,7 @@ public class Ventana extends JFrame {
 	public static int inicioX = 600;
 	public static int inicioY = 350;
 	public static int largoVentana = 400;
-	public static int altoVentana = 600;
+	public static int altoVentana = 500;
 
 	public Ventana() {
 

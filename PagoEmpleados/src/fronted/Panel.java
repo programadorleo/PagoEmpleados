@@ -1,42 +1,121 @@
 package fronted;
 
+import backend.*;
+
 import java.awt.*;
+import java.awt.event.*;
 
 import javax.swing.*;
 
 public class Panel extends JPanel {
 
+	private String nombre;
+
+	private double horasTrabajadas = 0;
+
+	private double tarifa = 0;
+
+	JLabel tituloPrincipal = new JLabel("PAGO DE EMPLEADOS");
+
+	JLabel labelEmpleado = new JLabel("EMPLEADO");
+
+	JTextField campoEmpleado = new JTextField(30);
+
+	JLabel labelHoras = new JLabel("HORAS");
+
+	JTextField campoHoras = new JTextField(5);
+
+	JLabel labelTarifa = new JLabel("TARIFA");
+
+	JTextField campoTarifa = new JTextField(5);
+
+	JButton botonMostrar = new JButton("MOSTRAR");
+
+	JButton botonLimpiar = new JButton("LIMPIAR");
+
+	TextArea areaTexto = new TextArea();
+
 	public Panel() {
 
-		JLabel tituloPrincipal = new JLabel("PAGO DE EMPLEADOS");
+		ubicarObjetosEnLamina();
+
+		agregarALamina();
+
+		procesaMostrar();
+
+		procesaLimpiar();
+
+	}
+
+	public void procesaLimpiar() {
+
+		ActionListener oyenteDeAccion = new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				
+				areaTexto.setText("");
+			}
+
+		};
+		
+		botonLimpiar.addActionListener(oyenteDeAccion);
+	}
+
+	public void procesaMostrar() {
+
+		ActionListener oyenteDeAccion = new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent a) {
+
+				asignarValores();
+
+				BotonResultado miPago = new BotonResultado(nombre, horasTrabajadas, tarifa);
+
+				areaTexto.setText(miPago.obtenerResultado());
+
+			}
+		};
+
+		botonMostrar.addActionListener(oyenteDeAccion);
+
+	}
+
+	public void asignarValores() {
+
+		this.nombre = campoEmpleado.getText();
+
+		this.horasTrabajadas = Double.parseDouble(campoHoras.getText());
+
+		this.tarifa = Double.parseDouble(campoTarifa.getText());
+	}
+
+	public void ubicarObjetosEnLamina() {
+
 		tituloPrincipal.setBounds(120, 10, 160, 20);
 
-		JLabel labelEmpleado = new JLabel("EMPLEADO");
 		labelEmpleado.setBounds(20, 60, 100, 20);
 
-		JTextField campoEmpleado = new JTextField(30);
 		campoEmpleado.setBounds(120, 60, 200, 20);
 
-		JLabel labelHoras = new JLabel("HORAS");
 		labelHoras.setBounds(20, 100, 50, 20);
 
-		JTextField campoHoras = new JTextField(5);
 		campoHoras.setBounds(80, 100, 50, 20);
 
-		JLabel labelTarifa = new JLabel("TARIFA");
 		labelTarifa.setBounds(150, 100, 50, 20);
 
-		JTextField campoTarifa = new JTextField(5);
 		campoTarifa.setBounds(200, 100, 50, 20);
 
-		JButton botonMostrar = new JButton("MOSTRAR");
 		botonMostrar.setBounds(40, 150, 100, 30);
 
-		JButton botonLimpiar = new JButton("LIMPIAR");
 		botonLimpiar.setBounds(200, 150, 100, 30);
 
-		TextArea areaTexto = new TextArea();
 		areaTexto.setBounds(30, 200, 300, 100);
+
+	}
+
+	public void agregarALamina() {
 
 		setLayout(null);
 
