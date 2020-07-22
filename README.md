@@ -1,11 +1,11 @@
 # PagoEmpleados
 
-Programa que se le ingresa: 
-                          Nombre = Patricio
-                          Horas = 10
-                          Tarifa = 20
+## Programa que se le ingresa: 
+#### Nombre = Patricio
+#### Horas = 10
+#### Tarifa = 20
  
- Muestra 
+ ## Muestra 
         Resumen de pago a empleado Patricio
         
         El salario baswico es: 200  se calcula Horas*Tarifa
