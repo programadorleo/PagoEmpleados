@@ -20,6 +20,8 @@ public class Ventana extends JFrame {
 		
 		Lamina miLamina = new Lamina();
 		
+		miLamina.iniciar();
+		
 		add(miLamina);
 
 	}

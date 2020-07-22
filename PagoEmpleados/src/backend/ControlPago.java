@@ -1,11 +1,9 @@
 package backend;
 
-import fronted.*;
-
 public class ControlPago {
 
 	private String nombre;
-	private double horasTrabajada;
+	private double horasTrabajadas;
 	private double tarifa;
 	private double basico;
 	private double bonificacion;
@@ -14,7 +12,7 @@ public class ControlPago {
 	public ControlPago(String nombre, double horasTrabajadas, double tarifa) {
 
 		this.nombre = nombre;
-		this.horasTrabajada = horasTrabajadas;
+		this.horasTrabajadas = horasTrabajadas;
 		this.tarifa = tarifa;
 		this.basico = horasTrabajadas * tarifa;
 		this.bonificacion = this.basico * 0.2;
@@ -25,14 +23,14 @@ public class ControlPago {
 
 		String resultado;
 
-		if (nombre.equals("")) {
-
+		if (nombre.equals("")||horasTrabajadas<=0||tarifa<=0) {
+         
 			resultado = "";
 
 		} else {
 
-			resultado = "Resumen de Pago a Empleado: " + this.nombre + "\n\n El salario basico es:" + this.basico
-					+ "\n La bonificacion es:" + this.bonificacion + "\n El neto es: " + this.neto;
+			resultado = "Resumen de Pago a Empleado: " + nombre + "\n\n El salario basico es:" + basico
+					+ "\n La bonificacion es:" + bonificacion + "\n El neto es: " + neto;
 		}
 
 		return resultado;
