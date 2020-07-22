@@ -1,5 +1,5 @@
 # PagoEmpleados
-
+### uso swing 
 ## Programa que se le ingresa: 
 #### Nombre = Patricio
 #### Horas = 10
