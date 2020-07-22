@@ -5,10 +5,10 @@ import javax.swing.*;
 
 public class Ventana extends JFrame {
 
-	public static int inicioX = 600;
-	public static int inicioY = 350;
-	public static int largoVentana = 400;
-	public static int altoVentana = 600;
+	private static int inicioX = 600;
+	private static int inicioY = 350;
+	private static int largoVentana = 400;
+	private static int altoVentana = 500;
 
 	public Ventana() {
 
@@ -17,10 +17,12 @@ public class Ventana extends JFrame {
 		setTitle("Pago empleados");
 
 		setBounds(inicioX, inicioY, largoVentana, altoVentana);
-
-		Panel miPanel = new Panel();
-
-		add(miPanel);
+		
+		Lamina miLamina = new Lamina();
+		
+		miLamina.iniciar();
+		
+		add(miLamina);
 
 	}
 
