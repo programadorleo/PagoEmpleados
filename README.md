@@ -2,7 +2,7 @@
 
 ### Utiliza swing 
 
-Proyecto realizado en Java en el cual se procesa el pago de empleados 
+Proyecto realizado en Java en el cual se procesa el pago de empleados.
 
 #### Calculos
 
