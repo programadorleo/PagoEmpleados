@@ -13,7 +13,7 @@
         La bonificacion: 40         se calcula basico *0.2   (20%)
         El neto es: 216             se (calcula basico+bonificacion)*0.9  (90%)
  
-## Funcionamiento de las clases.                         
+## Funcionamiento de las clases                        
 #### El programa esta compuesto de 4 clases divididas en dos paquetes fronted y backend.
 ### En el fronted se encuentra:
 #### Main : Es la encargada de instanciar Ventana y hacerla visible.
